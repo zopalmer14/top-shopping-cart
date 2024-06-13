@@ -1,0 +1,38 @@
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--purple-accent);
+    padding: 1rem 3rem;
+}
+
+.nav-container h2 {
+    font-size: 1.75rem;
+    color: white;
+}
+
+.nav-container nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-container nav button {
+    color: white;
+    background-color: var(--purple-accent);
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 0.6rem 1.2rem;
+    transition: 0.25s ease-in-out
+}
+.nav-container nav button:hover {
+    cursor: pointer;
+    border-color: white;
+    transform: translateY(-1px);
+}
+.nav-container nav button:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;   
+}
