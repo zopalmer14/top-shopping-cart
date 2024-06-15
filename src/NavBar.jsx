@@ -2,21 +2,19 @@
 // styling
 import './NavBar.css'
 
-function NavBar() {
+function NavBar({ title, links, onClick }) {
 
   return (
     <div className='nav-container'>
-        <h2>eShopCenter</h2>
+        <h2>{title}</h2>
         <nav>
-            <div className='link-container'>
-                <button>Home</button>
-            </div>
-            <div className='link-container'>
-                <button>Shop</button>
-            </div>
-            <div className='link-container'>
-                <button>Cart</button>
-            </div>
+            {links && links.map((link) => {
+                return (
+                    <div key={link} className='link-container'>
+                        <button onClick={() => onClick(link)}>{link}</button>
+                    </div>
+                )
+            })}
         </nav>
     </div>
   )
