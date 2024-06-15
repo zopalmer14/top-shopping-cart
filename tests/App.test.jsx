@@ -1,25 +1,26 @@
 
+// testing libraries
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
+// components
 import App from '../src/App';
 
+// test App
 describe('App', () => {
-  it('renders headline', () => {
-    render(<App title="React" />);
+    // App should render a header section
+    it('app should contain a header section', () => {
+        render(<App />);
 
-    screen.debug();
+        const header = document.querySelector('header');
+        expect(header).toBeInTheDocument();
+    });
 
-    // check if App components renders headline
-  });
-});
+    // App should render a NavBar 
+    it('app should contain a navbar', () => {
+        render(<App />);
 
-describe('something truthy and falsy', () => {
-  it('true to be true', () => {
-    expect(true).toBe(true);
-  });
-
-  it('false to be false', () => {
-    expect(false).toBe(false);
-  });
+        const navBar = document.querySelector('.nav-container');
+        expect(navBar).toBeInTheDocument();
+    });
 });
