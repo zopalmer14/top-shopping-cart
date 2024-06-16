@@ -1,0 +1,10 @@
+
+.shop-catalog {
+    display: grid;
+    grid-template: 300px / repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 3rem 2rem;
+
+    background-color: lightgray;
+    padding: 2rem;
+}
