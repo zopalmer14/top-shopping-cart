@@ -3,16 +3,15 @@
 import ShopItem from './ShopItem';
 
 // styling
-import './ShopPage.css'
+import '../styles/ShopPage.css'
 
 function ShopPage({ items }) {
-  console.log(items)
   return (
     <div className='shop-catalog'>
-      {items && items.map((item) => {
+      {items && items.map((item, index) => {
         return (
           <ShopItem 
-            id={item.name}
+            key={index}
             name={item.name}
             cost={item.cost}
             imgSrc={item.img}

@@ -7,7 +7,7 @@ import NavBar from './NavBar';
 import ShopPage from './ShopPage';
 
 // styling
-import './App.css'
+import '../styles/App.css'
 
 // default info/states
 const pageLinks = ['Home', 'Shop', 'Cart'];

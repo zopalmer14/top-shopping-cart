@@ -1,6 +1,6 @@
 
 // styling
-import './ShopItem.css'
+import '../styles/ShopItem.css'
 
 function ShopItem({ name, cost, imgSrc, onClick }) {
   return (
