@@ -12,24 +12,6 @@ import '../styles/App.css'
 // default info/states
 const pageLinks = ['Home', 'Shop', 'Cart'];
 
-const shopItems = [
-  {
-    name: "umbrella",
-    cost: 20,
-    img: "placeholder"
-  },
-  {
-    name: "umbrella",
-    cost: 20,
-    img: "placeholder"
-  },
-  {
-    name: "umbrella",
-    cost: 20,
-    img: "placeholder"
-  },
-];
-
 function App() {
   // react states
   const [pageShowing, setPageShowing] = useState('Home');
@@ -45,7 +27,7 @@ function App() {
       </header>
 
       <main>
-        {pageShowing === 'Shop' ? <ShopPage items={shopItems} /> : pageShowing}
+        {pageShowing === 'Shop' ? <ShopPage /> : pageShowing}
       </main>
     </div>
   )

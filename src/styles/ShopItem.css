@@ -2,27 +2,72 @@
 .shop-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-
-    padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.35);
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    outline: none;
 }
 
 .shop-item .img-container {
-    object-position: center center;
+    display: flex;
+    justify-content: center;
+
+    background-color: white;
+    padding: 0.5rem;
     flex: 1 1 0;
+
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
-.shop-item img {
-    height: 150px;
-    width: 100px;
+.shop-item .img-container img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
 }
 
-.shop-item h1 {
+.shop-item .item-info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
     color: white;
-    font-size: 1.5rem;
+    background-color: var(--purple-accent);
+    padding: 1rem;
+    font-size: 0.75rem;
+
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.shop-item .item-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.shop-item .item-info h3 {
+    font-size: 0.75rem;
+    font-family: bold;
+}
+
+.shop-item .item-info button {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+
+    color: white;
+    font-size: 0.75rem;
+
+    background-color: var(--purple-accent);
+    padding: 0.25rem 0.5rem;
+
+    border: none;
+    border-radius: 0.25rem;
+    transition: ease-in-out 0.5s;
+}
+.shop-item .item-info button:hover {
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+.shop-item .item-info button:focus,
+.shop-item .item-info button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
 }
