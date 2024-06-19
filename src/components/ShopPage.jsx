@@ -19,6 +19,7 @@ async function getShopItems() {
 
 function ShopPage({  }) {
   const [shopItems, setShopItems] = useState([])
+  const [cartItems, setCartItems] = useState([])
 
   // side effect that grabs the fakeShopAPI data 
   useEffect(() => {
@@ -27,16 +28,29 @@ function ShopPage({  }) {
     })
   }, [])
 
+  // ADD ITEM TO CART -- function handler
+  const addItemToCart = function addItemToCart(event) {
+    // grab the item id from the button the user clicked
+    const itemId = event.currentTarget.id;
+
+    // find the item in the array of shop items 
+    const selectedItem = shopItems.find((item) => item.id == itemId)
+
+    // add the selected item to the current cart
+    setCartItems([...cartItems, selectedItem])
+  }
+
   return (
     <div className='shop-catalog'>
       {shopItems && shopItems.map((item) => {
         return (
           <ShopItem 
             key={item.id}
+            id={item.id}
             name={item.title}
             cost={item.price}
             imgSrc={item.image}
-            onClick={() => {}}
+            onClick={addItemToCart}
           />
         )
       })}

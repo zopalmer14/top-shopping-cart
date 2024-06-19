@@ -2,7 +2,7 @@
 // styling
 import '../styles/ShopItem.css'
 
-function ShopItem({ name, cost, imgSrc, onClick }) {
+function ShopItem({ id, name, cost, imgSrc, onClick }) {
   return (
     <div className='shop-item'>
       <div className='img-container'>
@@ -13,7 +13,7 @@ function ShopItem({ name, cost, imgSrc, onClick }) {
           <h3>{name}</h3>
           {cost}
         </div>
-        <button onClick={onClick()}>+ Add to Cart</button>
+        <button id={id} onClick={onClick}>+ Add to Cart</button>
       </div>
     </div>
   )
