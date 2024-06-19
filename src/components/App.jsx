@@ -5,6 +5,7 @@ import { useState } from 'react'
 // react components
 import NavBar from './NavBar';
 import ShopPage from './ShopPage';
+import CartPanel from './CartPanel';
 
 // styling
 import '../styles/App.css'
@@ -15,9 +16,14 @@ const pageLinks = ['Home', 'Shop', 'Cart'];
 function App() {
   // react states
   const [pageShowing, setPageShowing] = useState('Home');
+  
+  // derived values
+  const cartShowing = pageShowing === 'Cart';
 
   return (
-    <div>
+    <div className={cartShowing ? 'background' : 'foreground'}>
+      <CartPanel items={[]} isShowing={cartShowing}/>
+
       <header>
         <NavBar
           title="eShopCenter"
