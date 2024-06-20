@@ -16,13 +16,14 @@ const pageLinks = ['Home', 'Shop', 'Cart'];
 function App() {
   // react states
   const [pageShowing, setPageShowing] = useState('Home');
+  const [cartItems, setCartItems] = useState([])
   
   // derived values
   const cartShowing = pageShowing === 'Cart';
 
   return (
     <Fragment>
-      <CartPanel items={[]} isShowing={cartShowing}/>
+      <CartPanel items={cartItems} isShowing={cartShowing}/>
       <div className={cartShowing ? 'background' : 'foreground'}>
         <header>
           <NavBar
@@ -32,7 +33,11 @@ function App() {
           />
         </header>
         <main>
-          {pageShowing === 'Shop' ? <ShopPage /> : pageShowing}
+          {pageShowing !== 'Shop' ? pageShowing : (
+            <ShopPage 
+              setCart={(selectedItem) => setCartItems([...cartItems, selectedItem])} 
+            />
+          )}
         </main>
       </div>
     </Fragment>

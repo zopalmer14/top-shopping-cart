@@ -17,9 +17,9 @@ async function getShopItems() {
   }
 }
 
-function ShopPage({  }) {
+function ShopPage({ setCart }) {
+  // react states
   const [shopItems, setShopItems] = useState([])
-  const [cartItems, setCartItems] = useState([])
 
   // side effect that grabs the fakeShopAPI data 
   useEffect(() => {
@@ -37,7 +37,7 @@ function ShopPage({  }) {
     const selectedItem = shopItems.find((item) => item.id == itemId)
 
     // add the selected item to the current cart
-    setCartItems([...cartItems, selectedItem])
+    setCart(selectedItem)
   }
 
   return (
