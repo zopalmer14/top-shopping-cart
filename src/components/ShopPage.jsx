@@ -50,6 +50,7 @@ function ShopPage({ setCart }) {
             name={item.title}
             cost={item.price}
             imgSrc={item.image}
+            buttonText={'+ Add to Cart'}
             onClick={addItemToCart}
           />
         )

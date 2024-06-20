@@ -20,6 +20,7 @@ function CartPanel({ items, isShowing }) {
               name={item.title}
               cost={item.price}
               imgSrc={item.image}
+              buttonText={'Delete'}
               onClick={() => {}}
             />
           )
