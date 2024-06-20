@@ -1,6 +1,6 @@
 
 // packages / libraries
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 
 // react components
 import NavBar from './NavBar';
@@ -21,21 +21,21 @@ function App() {
   const cartShowing = pageShowing === 'Cart';
 
   return (
-    <div className={cartShowing ? 'background' : 'foreground'}>
+    <Fragment>
       <CartPanel items={[]} isShowing={cartShowing}/>
-
-      <header>
-        <NavBar
-          title="eShopCenter"
-          links={pageLinks}
-          onClick={(pageName) => setPageShowing(pageName)}
-        />
-      </header>
-
-      <main>
-        {pageShowing === 'Shop' ? <ShopPage /> : pageShowing}
-      </main>
-    </div>
+      <div className={cartShowing ? 'background' : 'foreground'}>
+        <header>
+          <NavBar
+            title="eShopCenter"
+            links={pageLinks}
+            onClick={(pageName) => setPageShowing(pageName)}
+          />
+        </header>
+        <main>
+          {pageShowing === 'Shop' ? <ShopPage /> : pageShowing}
+        </main>
+      </div>
+    </Fragment>
   )
 }
 
